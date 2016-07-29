@@ -2,9 +2,9 @@ import { Strategy as FacebookStrategy } from 'passport-facebook';
 import passport from 'passport';
 
 const FB = {
-  APP_ID: process.env.FACEBOOK_APP_ID || 0,
-  APP_SECRET: process.env.FACEBOOK_APP_SECRET || 0,
-  CALLBACK: 'https://hotspot-app.herokuapp.com/auth/facebook/callback'
+  APP_ID: '1813878368846537',
+  APP_SECRET: '593aa0c997cd308c58587825095f4264',
+  CALLBACK: 'http://localhost:8732/auth/facebook/callback'
 };
 
 console.log(FB);
@@ -31,3 +31,4 @@ export const facebookAuthConfig = function(User) {
   }
   ));
 };
+
