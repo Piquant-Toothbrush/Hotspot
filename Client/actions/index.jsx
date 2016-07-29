@@ -82,6 +82,28 @@ export function submitSearch(inputObj) {
   }
 }
 
+
+export function toggleResultsList(panelMode, isOpen){
+ // If panelMode is collection, set it to null.
+   if (panelMode === 'collection' && isOpen === true) {
+     isOpen = false;
+   } else {
+     // Else set panelMode to collection
+     panelMode = 'collection';
+     isOpen = true;
+   }
+ 
+   return {
+     type: NAV_CLICK_COLLECTION,
+     payload: {
+      panelMode: panelMode,
+      isOpen: isOpen
+    }
+   };
+ }
+
+
+
 // Click Handler for Nav Collection button
 export function toggleCollectionList(panelMode, isOpen) {
   // If panelMode is collection, set it to null.
