@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ff7659bf9d044453af02"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3888aea143832653817c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -22639,9 +22639,10 @@
 	}
 
 	function submitSearch(inputObj) {
-
+	  console.log('search called', inputObj);
 	  var data = new _bluebird2.default(function (resolve, reject) {
-	    _superagent2.default.post('/api/yelp').send(inputObj).end(function (err, res) {
+
+	    _superagent2.default.post('/api/yelpss').send(inputObj).end(function (err, res) {
 	      if (err) {
 	        return reject(err);
 	      }
