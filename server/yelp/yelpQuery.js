@@ -1,10 +1,10 @@
 // Required modules to handle Yelp's oAuth requirement
-import oauthSignature from 'oauth-signature';
-import n from 'nonce';
-import request from 'request';
-import qs from 'querystring';
-import _ from 'lodash';
-import Promise from 'bluebird';
+var oauthSignature =require('oauth-signature');
+var n =require('nonce');
+var request =require('request');
+var qs =require('querystring');
+var _ =require('lodash');
+var Promise =require('bluebird');
 
 // Import sercet API keys (All 4 are needed)
 // cant import from non existant file in deployment
@@ -23,7 +23,7 @@ var endpointNewPlace = 'https://api.yelp.com/v2/search';
 var endpointBusID = 'https://api.yelp.com/v2/business/';
 
 // Generate parameters for a new business
-export var generateYelpNewBusParam = function (name, longitude, latitude, friendWishOnly) {
+module.exports.generateYelpNewBusParam = function (name, longitude, latitude, friendWishOnly) {
   console.log('generateYelpNewBusParam called')
   return {
     term: name,
@@ -34,7 +34,7 @@ export var generateYelpNewBusParam = function (name, longitude, latitude, friend
 };
 
 // Yelp call
-export var requestYelp = function (setParameters, busId, searchBar) {
+module.exports.requestYelp = function (setParameters, busId, searchBar) {
   var friendWishOnly = setParameters.friendWishOnly
   console.log('requestYelp called')
   var httpMethod = 'GET';
@@ -109,7 +109,7 @@ export var requestYelp = function (setParameters, busId, searchBar) {
 };
 
 // Multiple requests for businessId array
-export var requestMultipleYelp = function(yelpParams) {
+module.exports.requestMultipleYelp = function(yelpParams) {
   return Promise.all(yelpParams.map((yelpParam) => {
     return requestYelp(yelpParam);
   }));
@@ -125,7 +125,7 @@ export var requestMultipleYelp = function(yelpParams) {
 };
 
 // Parse required data out of Yelp's response data
-export var parseYelpData = function (business, friendWishOnly) {
+module.exports.parseYelpData = function (business, friendWishOnly) {
   console.log('businessss',business);
   let cuisine;
   if (business.categories && business.categories[0]) {

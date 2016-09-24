@@ -1,5 +1,5 @@
-import DB from './queries';
-import dbConnection from './dbConnect';
+var DB =require('./queries');
+var dbConnection =require('./dbConnect');
 
 const WishesSchema = {
   columns: {
@@ -13,4 +13,4 @@ const WishesSchema = {
 
 const Wishes = new DB(dbConnection, WishesSchema);
 
-export default Wishes;
+module.exports= Wishes;

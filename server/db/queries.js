@@ -1,7 +1,10 @@
-import _ from 'lodash';
-import {createInsertQuery, createUpdateQuery, sendBackJSON, createSelectQuery} from './queryHelpers';
+var _ = require('lodash');
+var createInsertQuery = require('./queryHelpers').createInsertQuery
+var createUpdateQuery = require('./queryHelpers').createUpdateQuery
+var sendBackJSON = require('./queryHelpers').sendBackJSON
+var createSelectQuery = require('./queryHelpers').createSelectQuery
 
-export default class DB {
+module.exports=  class DB {
   constructor(pgConnection, schema) {
     this.pg = pgConnection;
     this.schema = schema;

@@ -1,8 +1,8 @@
-import _ from 'lodash';
-import bcrypt from 'bcrypt-nodejs';
-import dbConnection from './dbConnect';
-import DB from './queries';
-import {createInsertQuery} from './queryHelpers';
+var _ = require('lodash');
+var bcrypt = require( 'bcrypt-nodejs');
+var dbConnection = require( './dbConnect');
+var DB = require( './queries');
+var {createInsertQuery} = require( './queryHelpers');
 
 const userSchema = {
   columns: {
@@ -40,4 +40,4 @@ class User extends DB {
   }
 }
 
-export default new User(dbConnection, userSchema);
+module.exports=  new User(dbConnection, userSchema);

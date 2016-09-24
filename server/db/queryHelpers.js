@@ -1,4 +1,4 @@
-import _ from 'lodash';
+var _ =require('lodash');
 
 const typeWrapper = function(thing, type){
   if(thing === null) return null;
@@ -6,7 +6,7 @@ const typeWrapper = function(thing, type){
   return thing;
 }
 
-export const createInsertQuery = function (schema, objToInsert) {
+module.exports.createInsertQuery = function (schema, objToInsert) {
   let query = `insert into ${schema.tableName}`;
   let columns = '('.concat(_
     .reduce(Object.keys(schema.columns), (columns, val) => `${columns}, ${val}`), '')
@@ -25,7 +25,7 @@ export const createInsertQuery = function (schema, objToInsert) {
   return `${query} ${columns} ${values}`;
 };
 
-export const createUpdateQuery = function(schema, updateObj, id) {
+module.exports.createUpdateQuery = function(schema, updateObj, id) {
   let query = `update ${schema.tableName} set`;
   let changes = _.reduce(updateObj, (columnChanges, val, key) => {
     return `${columnChanges} ${key} = ${typeWrapper(val, schema.columns[val])},`;
@@ -33,7 +33,7 @@ export const createUpdateQuery = function(schema, updateObj, id) {
   return `${query} ${changes};`;
 };
 
-export const createSelectQuery = function(schema, findObj) {
+module.exports.createSelectQuery = function(schema, findObj) {
   let query = `select * from ${schema.tableName} where`;
   let length = Object.keys(findObj).length;
   let i = 0;
@@ -48,7 +48,7 @@ export const createSelectQuery = function(schema, findObj) {
   return `${query} ${params}`
 };
 
-export const sendBackJSON = function (res, data, message){
+module.exports.sendBackJSON = function (res, data, message){
   return res.status(200)
     .json({
       data: data,

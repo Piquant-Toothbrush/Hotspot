@@ -1,15 +1,17 @@
-import Spot from '../db/Spots';
-import SpotsUsers from '../db/spotsUsersJoin';
-import { sendBackJSON } from '../db/queryHelpers';
-import {requestMultipleYelp, generateYelpNewBusParam, requestYelp} from '../yelp/yelpQuery';
-import Promise from 'bluebird';
-import _ from 'lodash';
-import Friends from '../db/Friends';
-import FriendRequests from '../db/FriendRequests';
-import Wishes from '../db/Wishes';
-import Users from '../db/Users';
+var Spot =require('../db/Spots');
+var SpotsUsers =require( '../db/spotsUsersJoin');
+var sendBackJSON =require('../db/queryHelpers').sendBackJSON;
+var requestMultipleYelp =require('../yelp/yelpQuery').requestMultipleYelp
+var generateYelpNewBusParam  =require('../yelp/yelpQuery').generateYelpNewBusParam
+var requestYelp =require('../yelp/yelpQuery').requestYelp
+var Promise =require( 'bluebird');
+var _ =require( 'lodash');
+var Friends =require( '../db/Friends');
+var FriendRequests =require( '../db/FriendRequests');
+var Wishes =require( '../db/Wishes');
+var Users =require( '../db/Users');
 
-export default function(app) {
+module.exports= function(app) {
   // RESTFUl API for retrieving spots from the db
   app.get('/api/spots', (req, res) => {
 

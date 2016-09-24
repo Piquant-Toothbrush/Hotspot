@@ -1,7 +1,7 @@
-import { Strategy as LocalStrategy } from 'passport-local';
-import passport from 'passport';
+var LocalStrategy = require('passport-local').Strategy;
+var passport = require('passport');
 //---------------------------Local Strategy-------------------------------------
-export default function(User) {
+module.exports= function(User) {
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',

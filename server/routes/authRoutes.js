@@ -1,8 +1,8 @@
-import path from 'path';
-import passport from 'passport';
-import isAuthenticated from '../auth/isAuthenticated';
+var path =require('path');
+var passport =require('passport');
+var isAuthenticated =require('../auth/isAuthenticated');
 
-export default function(app) {
+module.exports=  function(app) {
   // AUTHENTICATION
   app.route('/login')
     .get((req, res) => {

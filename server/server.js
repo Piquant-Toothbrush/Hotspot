@@ -1,12 +1,13 @@
-import express from 'express';
-import serverConfig from './server-config';
-import Spot from './db/Spots';
-import User from './db/Users';
-import {facebookAuthConfig} from './auth/fbAuth';
-import localAuthConfig from './auth/localAuth';
-import primaryRoutes from './routes/primaryRoutes';
-import authRoutes from './routes/authRoutes';
-import apiRoutes from './routes/apiRoutes';
+var express = require('express');
+var serverConfig =require('./server-config');
+var Spot =require ('./db/Spots');
+var User =require( './db/Users');
+const test="test"
+var facebookAuthConfig =require('./auth/fbAuth').facebookAuthConfig;
+var localAuthConfig =require('./auth/localAuth');
+var primaryRoutes =require('./routes/primaryRoutes');
+var authRoutes =require('./routes/authRoutes');
+var apiRoutes =require('./routes/apiRoutes');
 
 
 const app = express();

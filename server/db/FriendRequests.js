@@ -1,5 +1,5 @@
-import DB from './queries';
-import dbConnection from './dbConnect';
+var DB =require('./queries');
+var dbConnection =require('./dbConnect');
 
 const FriendRequestsSchema = {
   columns: {
@@ -12,4 +12,4 @@ const FriendRequestsSchema = {
 
 const FriendRequests = new DB(dbConnection, FriendRequestsSchema);
 
-export default FriendRequests;
+module.exports= FriendRequests;

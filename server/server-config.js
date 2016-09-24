@@ -1,13 +1,13 @@
-import bodyParser from 'body-parser';
-import path from 'path';
-import session from 'express-session';
-import hbs from 'express-handlebars';
-import passport from 'passport';
-import express from 'express';
-import fs from 'fs';
-import _ from 'lodash';
+var bodyParser = require('body-parser');
+var path = require( 'path');
+var session = require( 'express-session');
+var hbs = require( 'express-handlebars');
+var passport = require( 'passport');
+var express = require( 'express');
+var fs = require( 'fs');
+var _ = require( 'lodash');
 
-export default function(app, User) {
+module.exports=  function(app, User) {
   app.engine('hbs', hbs({
     extname: 'hbs',
     defaultLayout: 'splash',

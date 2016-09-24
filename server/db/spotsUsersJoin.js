@@ -1,5 +1,5 @@
-import DB from './queries';
-import dbConnection from './dbConnect';
+var DB = require('./queries');
+var dbConnection = require('./dbConnect');
 
 const spotUserSchema = {
   columns: {
@@ -11,4 +11,4 @@ const spotUserSchema = {
 
 const SpotsUsers = new DB(dbConnection, spotUserSchema);
 
-export default SpotsUsers;
+module.exports= SpotsUsers;

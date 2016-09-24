@@ -1,5 +1,5 @@
-import { Strategy as FacebookStrategy } from 'passport-facebook';
-import passport from 'passport';
+var FacebookStrategy = require('passport-facebook').Strategy;
+var passport = require('passport');
 
 const FB = {
   APP_ID: '1813878368846537',
@@ -8,7 +8,7 @@ const FB = {
 };
 
 console.log(FB);
-export const facebookAuthConfig = function(User) {
+module.exports.facebookAuthConfig = function(User) {
   passport.use(new FacebookStrategy({
     clientID: FB.APP_ID,
     clientSecret: FB.APP_SECRET,

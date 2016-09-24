@@ -7,11 +7,11 @@ const PATHS = {
 };
 
 module.exports = {
-  entry: './Client/index.js',
+  entry: {bundle:'./Client/index.js', server:'./server/server.js'},
   output: {
     path: PATHS.compiled,
-    filename: 'app.bundle.js',
-    favicon:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Tom's_Restaurant,_NYC.jpg"
+    filename: 'app.[name].js',
+    favicon: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Tom's_Restaurant,_NYC.jpg"
   },
   module: {
     loaders: [

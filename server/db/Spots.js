@@ -1,8 +1,8 @@
-import _ from 'lodash';
-import DB from './queries';
-import dbConnection from './dbConnect';
-import SpotsUsers from './spotsUsersJoin';
-import Promise from 'bluebird';
+var _ = require('lodash');
+var DB = require( './queries');
+var dbConnection = require( './dbConnect');
+var SpotsUsers = require( './spotsUsersJoin');
+var Promise = require( 'bluebird');
 
 const spotSchema = {
   columns: {
@@ -30,4 +30,4 @@ class Spot extends DB {
   }
 }
 
-export default new Spot(dbConnection, spotSchema);
+module.exports=  new Spot(dbConnection, spotSchema);
