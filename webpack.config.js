@@ -7,10 +7,10 @@ const PATHS = {
 };
 
 module.exports = {
-  entry: {bundle:'./Client/index.js', server:'./server/server.js'},
+  entry: './Client/index.js',
   output: {
     path: PATHS.compiled,
-    filename: 'app.[name].js',
+    filename: 'app.bundle.js',
     favicon: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Tom's_Restaurant,_NYC.jpg"
   },
   module: {

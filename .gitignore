@@ -10,7 +10,6 @@ pids
 *.seed
 
 ## Compiled files ##
-server-dist
 
 ## NPM ##
 node_modules/
