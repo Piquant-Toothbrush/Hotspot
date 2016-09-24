@@ -329,7 +329,7 @@ export function fetchCurrentFriends() {
   // Query database for user's friends
   console.log('fetchFriends')
   const currFriends = request.get(endpoints.getFriends);
-$.get("http://127.0.0.1:8732/api/friends",function(a,b){
+$.get("https://boiling-ridge-66714.herokuapp.com/api/friends",function(a,b){
     console.log('these are all my friendsssssss!!!',a,b);
   })
   return {
@@ -344,7 +344,7 @@ export function fetchFriendRequests() {
   // Query database for user's friendRequests;
   console.log('fetchFriendRequests')
   const friendRequests = request.get(endpoints.friendReqs);
-  $.get("http://127.0.0.1:8732/api/pendingFriendRequest",function(a,b){
+  $.get("https://boiling-ridge-66714.herokuapp.com/api/pendingFriendRequest",function(a,b){
     console.log('these are all my friend requests',a,b);
   })
   return {
