@@ -82,11 +82,11 @@ if (this.props.panelMode === 'friendRequests'){
   <div ><input className = 'friendToAdd 'type='text' placeholder='Add a Friend'/>
   <button className='button' onClick={this.submitFriendReq.bind(this)}>Send Request</button></div>
 <div style= {{display:"none",color:"white"}} className='alreadyAFriend'>   Already a friend </div>
-<div style= {{display:"none",color:"white"}} className='doesntExist'>   This Person hasn't signed up   </div>
+<div style= {{display:"none",color:"white"}} className='doesntExist'>   This Person hasn't signed up   </div><br/>
 <div style= {{display:"none",color:"white"}} className='requestSent'>   Request Sent!   </div>
 <div style= {{display:"none",color:"white"}} className='alreadySent'>   Already sent a friend request  </div>
 
-<p style={{color:"white"}}>Aint no friend requests</p>
+<p style={{color:"white"}}>No pending friend requests</p>
 
     </div>
 } else {//

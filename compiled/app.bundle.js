@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3888aea143832653817c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2816bc7fccb3c312377d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -22642,7 +22642,7 @@
 	  console.log('search called', inputObj);
 	  var data = new _bluebird2.default(function (resolve, reject) {
 
-	    _superagent2.default.post('/api/yelpss').send(inputObj).end(function (err, res) {
+	    _superagent2.default.post('/api/yelp').send(inputObj).end(function (err, res) {
 	      if (err) {
 	        return reject(err);
 	      }
@@ -57289,6 +57289,7 @@
 	              { style: { display: "none", color: "white" }, className: 'doesntExist' },
 	              '   This Person hasn\'t signed up   '
 	            ),
+	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	              'div',
 	              { style: { display: "none", color: "white" }, className: 'requestSent' },
@@ -57302,7 +57303,7 @@
 	            _react2.default.createElement(
 	              'p',
 	              { style: { color: "white" } },
-	              'Aint no friend requests'
+	              'No pending friend requests'
 	            )
 	          );
 	        } else {

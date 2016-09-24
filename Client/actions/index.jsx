@@ -84,7 +84,7 @@ export function submitSearch(inputObj) {
 console.log('search called', inputObj);
   const data = new Promise((resolve, reject) => {
 
-    request.post('/api/yelpss')
+    request.post('/api/yelp')
     .send(inputObj)
     .end((err, res) => {
       if (err) {
