@@ -83,7 +83,7 @@ module.exports.requestYelp = function (setParameters, busId, searchBar) {
   return new Promise((resolve, reject) => {
     // console.log(apiUrl);
     request(apiUrl, function(err, res, body) {
-       console.log('yelp res', err, res, JSON.parse(body));
+       console.log('yelp res', err, JSON.parse(body));
       if (err) {
         console.log('**********************************');
         console.log('ERROR', err);
