@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e9ab4547d805a6edf2c7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "80b9ba4fd8ee25eb896b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -22873,7 +22873,7 @@
 	  // Query database for user's friends
 	  console.log('fetchFriends');
 	  var currFriends = _superagent2.default.get(endpoints.getFriends);
-	  _jquery2.default.get("http://127.0.0.1:8732/api/friends", function (a, b) {
+	  _jquery2.default.get("https://boiling-ridge-66714.herokuapp.com/api/friends", function (a, b) {
 	    console.log('these are all my friendsssssss!!!', a, b);
 	  });
 	  return {
@@ -22887,7 +22887,7 @@
 	  // Query database for user's friendRequests;
 	  console.log('fetchFriendRequests');
 	  var friendRequests = _superagent2.default.get(endpoints.friendReqs);
-	  _jquery2.default.get("http://127.0.0.1:8732/api/pendingFriendRequest", function (a, b) {
+	  _jquery2.default.get("https://boiling-ridge-66714.herokuapp.com/api/pendingFriendRequest", function (a, b) {
 	    console.log('these are all my friend requests', a, b);
 	  });
 	  return {
